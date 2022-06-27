@@ -6,7 +6,7 @@ from sqlalchemy.exc import ProgrammingError
 
 from service.db.db_actions import get_writer
 from service.db.alchemy import get_db
-from service.db.schemas import OutputSchema
+from service.schemas import OutputSchema
 
 app = FastAPI()
 
