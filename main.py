@@ -8,7 +8,7 @@ from tools.config_parser import SERVICE_PORT, SERVICE_HOST
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        uvicorn.run(app, host=SERVICE_HOST, port=SERVICE_PORT, log_level="debug")
+        uvicorn.run(app, host=SERVICE_HOST, port=SERVICE_PORT, log_level="critical")
     else:
         if len(sys.argv) > 2:
             sys.exit("Usage: python3 main.py or python3 main.py init")
