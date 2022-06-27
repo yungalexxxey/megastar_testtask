@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.sql.schema import ForeignKey
 from sqlalchemy.orm import relationship
+
 from service.db.alchemy import Base
 
 

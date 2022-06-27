@@ -8,11 +8,12 @@ from tools.config_parser import SERVICE_PORT, SERVICE_HOST
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        uvicorn.run(app, host=SERVICE_HOST, port=SERVICE_PORT)
+        uvicorn.run(app, host=SERVICE_HOST, port=SERVICE_PORT, log_level="debug")
     else:
         if len(sys.argv) > 2:
-            print("python3 main.py or python3 main.py init")
-            sys.exit()
+            sys.exit("Usage: python3 main.py or python3 main.py init")
         if sys.argv[1] == 'init':
             init_sql()
-            uvicorn.run(app, host="0.0.0.0", port=8080)
+            uvicorn.run(app, host=SERVICE_HOST, port=SERVICE_PORT, log_level="critical")
+        else:
+            sys.exit("unexpected argument.\nUsage: python3 main.py or python3 main.py init")
